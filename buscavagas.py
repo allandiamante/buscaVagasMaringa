@@ -33,7 +33,7 @@ def pega_vagas(lista_itens, palavra_procurada):
 
 
 
-
+#test
 
 # URL FIXA, 
 # Var palavras_procuradas = lista de palavras que serão procuradas no título da vaga
