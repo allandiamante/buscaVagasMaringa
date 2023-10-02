@@ -1,7 +1,7 @@
-##API de Busca de Vagas de Emprego
+## API de Busca de Vagas de Emprego
 Esta é uma aplicação FastAPI que permite buscar vagas de emprego em Maringá, Brasil, com base em palavras-chave específicas. A aplicação possui uma interface HTML simples para inserir os critérios de busca e exibe os resultados em JSON.
 
-##Requisitos
+## Requisitos
 Python 3.6 ou superior
 FastAPI
 BeautifulSoup (para análise HTML)
@@ -45,13 +45,13 @@ Clique no botão "Buscar Vagas".
 
 Os resultados da pesquisa serão exibidos em formato JSON.
 
-##Rotas
+## Rotas
 /: Página inicial da API com um formulário HTML para pesquisa de vagas.
 /vagas/: Rota POST para buscar vagas com base nos critérios de pesquisa. Os resultados são retornados em JSON.
 Exemplo de Requisição POST
 Você pode fazer uma requisição POST para a rota /vagas/ com o seguinte corpo:
 
-#json
+# json
 Copy code
 {
     "name": "Seu Nome",
