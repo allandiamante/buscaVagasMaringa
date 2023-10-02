@@ -12,29 +12,29 @@ Instalação do Miniconda
 Clone este repositório em seu sistema local:
 
 bash
-Copy code
+Copy code:
 git clone https://github.com/seu-usuario/nome-do-repositorio.git
 Navegue até o diretório do projeto:
 
 bash
-Copy code
+Copy code:
 cd nome-do-repositorio
 Crie e ative um ambiente virtual (opcional, mas recomendado):
 
 bash
-Copy code
+Copy code:
 conda create -n meu-ambiente python=3.8
 conda activate meu-ambiente
 Instale as dependências do projeto:
 
 bash
-Copy code
+Copy code:
 pip install -r requirements.txt
 Uso
 Inicie a aplicação FastAPI:
 
 bash
-Copy code
+Copy code:
 uvicorn main:app --reload
 A aplicação será executada em http://localhost:8000 por padrão.
 
