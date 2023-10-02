@@ -1,0 +1,2 @@
+#Startar API
+uvicorn main:app --reload

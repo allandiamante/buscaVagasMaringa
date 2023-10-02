@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Vagas</title>
+
+    <!-- Adicione o link para o Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<body class="container">
+    <!-- Cabeçalho com Bootstrap -->
+    <header class="text-center mt-5">
+        <h1>API de Vagas: <a href="https://empregos.maringa.com/">www.empregos.maringa.com/</a></h1>
+        <h3>API em desenvolvimento para facilitar o acesso a vagas de emprego</h3>
+        <h3>Seu objetivo eh listar as vagas de emprego de acordo com as palavras-chave informadas.</h3>
+        <h3>Novas funcionalidades serão acrescentadas posteriormente</h3>
+    </header>
+
+    <!-- Formulário com Bootstrap -->
+    <form id="myForm" class="mt-5 bg-dark rounded">
+        <div class="p-4">
+            <div class="form-group">
+                <label for="name" class="text-light">Nome:</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="palavras_chave" class="text-light">Palavras-chave (separe por vírgula):</label>
+                <input type="text" id="palavras_chave" name="palavras_chave" class="form-control" required>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Buscar Vagas</button>
+        </div>
+    </form>
+
+
+    <!-- Scripts do Bootstrap -->
+    <footer class="mt-5">
+    </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+YfN5S2RSsJU6z4f5/8w+5Sg+tr5Ig9vqOjc9z5EG5Kg5zC1"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var form = document.getElementById('myForm');
+    form.onsubmit = function (event) {
+        event.preventDefault();
+
+        // Capturar os dados do formulário
+        var name = document.getElementById('name').value;
+        var palavras_chave = document.getElementById('palavras_chave').value.split(',');
+
+        // Criar um objeto com os dados
+        var data = {
+            "name": name,
+            "palavras_chave": palavras_chave
+        };
+
+        // Enviar os dados como JSON para o servidor usando fetch
+        fetch('http://localhost:8000/vagas/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Lidar com a resposta do servidor (data)
+            console.log(data);
+            form.reset(); // Redefinir o formulário após o sucesso da solicitação
+        })
+        .catch(error => {
+            // Lidar com erros de solicitação
+            console.error('Erro:', error);
+        });
+    };
+});
+
+</script>
+
+</html>
