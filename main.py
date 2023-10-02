@@ -60,6 +60,7 @@ async def busca_vagas(vagas: Vagas):
         dict_busca['url_vagas'].append(lista_busca[i].find('a')['href'])    
     dict_busca['quantidade_vaga'] = len(dict_busca['vagas'])
     if dict_busca['quantidade_vaga'] > 0:
+        print("------------Vaga index 0-------------")
         print(dict_busca['vagas'][0])
         print(dict_busca['url_vagas'][0])
     return dict_busca

@@ -27,7 +27,7 @@ def verificar_palavra_em_string(palavras, texto):
 def pega_vagas(lista_itens, palavra_procurada):    
     lista_vagas = []
     for i in range(len(lista_itens)):
-        if verificar_palavra_em_string(palavra_procurada, lista_itens[i].get('title')):
+        if verificar_palavra_em_string(palavra_procurada, lista_itens[i].get('title')):            
             lista_vagas.append(lista_itens[i])
     
     
