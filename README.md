@@ -7,7 +7,8 @@ FastAPI
 BeautifulSoup (para análise HTML)
 Pydantic (para validação de dados)
 Instalação do Miniconda
-Instalação
+
+## Instalação
 Clone este repositório em seu sistema local:
 
 bash
